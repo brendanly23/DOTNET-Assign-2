@@ -53,6 +53,12 @@
     <Compile Include="AdminAddUser.Designer.cs">
       <DependentUpon>AdminAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminDeleteUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDeleteUser.Designer.cs">
+      <DependentUpon>AdminDeleteUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </Compile>
     <EmbeddedResource Include="AdminAddUser.resx">
       <DependentUpon>AdminAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminDeleteUser.resx">
+      <DependentUpon>AdminDeleteUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>

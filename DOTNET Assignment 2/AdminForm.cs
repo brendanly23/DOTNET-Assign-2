@@ -19,7 +19,8 @@ namespace DOTNET_Assignment_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            AdminFormUserManagement menu = new AdminFormUserManagement();
+            menu.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)

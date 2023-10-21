@@ -21,7 +21,8 @@ namespace DOTNET_Assignment_2
         //Add a user into the Database
         private void button1_Click(object sender, EventArgs e)
         {
-
+            AdminAddUser adminAddUser = new AdminAddUser();
+            adminAddUser.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -34,5 +35,9 @@ namespace DOTNET_Assignment_2
 
         }
 
+        private void AdminFormUserManagement_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

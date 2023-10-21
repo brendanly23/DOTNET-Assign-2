@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.loginBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.subjectManagementDataSet = new DOTNET_Assignment_2.SubjectManagementDataSet();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.subjectManagementDataSet = new DOTNET_Assignment_2.SubjectManagementDataSet();
-            this.loginBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loginTableAdapter = new DOTNET_Assignment_2.SubjectManagementDataSetTableAdapters.LoginTableAdapter();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.subjectManagementDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectManagementDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -57,8 +57,34 @@
             this.panel1.Size = new System.Drawing.Size(676, 289);
             this.panel1.TabIndex = 5;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.loginBindingSource, "role", true));
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Admin",
+            "Teacher",
+            "Student"});
+            this.comboBox1.Location = new System.Drawing.Point(343, 126);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(175, 24);
+            this.comboBox1.TabIndex = 6;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // loginBindingSource
+            // 
+            this.loginBindingSource.DataMember = "Login";
+            this.loginBindingSource.DataSource = this.subjectManagementDataSet;
+            // 
+            // subjectManagementDataSet
+            // 
+            this.subjectManagementDataSet.DataSetName = "SubjectManagementDataSet";
+            this.subjectManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(343, 74);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(175, 22);
@@ -105,30 +131,6 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Add User";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.loginBindingSource, "role", true));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Admin",
-            "Teacher",
-            "Student"});
-            this.comboBox1.Location = new System.Drawing.Point(343, 126);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(175, 23);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // subjectManagementDataSet
-            // 
-            this.subjectManagementDataSet.DataSetName = "SubjectManagementDataSet";
-            this.subjectManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // loginBindingSource
-            // 
-            this.loginBindingSource.DataMember = "Login";
-            this.loginBindingSource.DataSource = this.subjectManagementDataSet;
-            // 
             // loginTableAdapter
             // 
             this.loginTableAdapter.ClearBeforeFill = true;
@@ -145,8 +147,8 @@
             this.Load += new System.EventHandler(this.AdminAddUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.subjectManagementDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectManagementDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -30,7 +30,8 @@ namespace DOTNET_Assignment_2
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            AdminClassManagement menu = new AdminClassManagement();
+            menu.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)

@@ -8,4 +8,14 @@
       <Column Name="role" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Subject" Member="Subjects">
+    <Type Name="Subject">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="day" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[start time]" Member="start_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[end time]" Member="end_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="teacher" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

@@ -33,6 +33,9 @@ namespace DOTNET_Assignment_2
     partial void InsertLogin(Login instance);
     partial void UpdateLogin(Login instance);
     partial void DeleteLogin(Login instance);
+    partial void InsertSubject(Subject instance);
+    partial void UpdateSubject(Subject instance);
+    partial void DeleteSubject(Subject instance);
     #endregion
 		
 		public DataClasses2DataContext() : 
@@ -70,6 +73,14 @@ namespace DOTNET_Assignment_2
 			get
 			{
 				return this.GetTable<Login>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Subject> Subjects
+		{
+			get
+			{
+				return this.GetTable<Subject>();
 			}
 		}
 	}
@@ -183,6 +194,188 @@ namespace DOTNET_Assignment_2
 					this._role = value;
 					this.SendPropertyChanged("role");
 					this.OnroleChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Subject")]
+	public partial class Subject : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _day;
+		
+		private System.Nullable<System.DateTime> _start_time;
+		
+		private System.Nullable<System.DateTime> _end_time;
+		
+		private string _name;
+		
+		private string _teacher;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OndayChanging(string value);
+    partial void OndayChanged();
+    partial void Onstart_timeChanging(System.Nullable<System.DateTime> value);
+    partial void Onstart_timeChanged();
+    partial void Onend_timeChanging(System.Nullable<System.DateTime> value);
+    partial void Onend_timeChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnteacherChanging(string value);
+    partial void OnteacherChanged();
+    #endregion
+		
+		public Subject()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_day", DbType="NVarChar(50)")]
+		public string day
+		{
+			get
+			{
+				return this._day;
+			}
+			set
+			{
+				if ((this._day != value))
+				{
+					this.OndayChanging(value);
+					this.SendPropertyChanging();
+					this._day = value;
+					this.SendPropertyChanged("day");
+					this.OndayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[start time]", Storage="_start_time", DbType="DateTime")]
+		public System.Nullable<System.DateTime> start_time
+		{
+			get
+			{
+				return this._start_time;
+			}
+			set
+			{
+				if ((this._start_time != value))
+				{
+					this.Onstart_timeChanging(value);
+					this.SendPropertyChanging();
+					this._start_time = value;
+					this.SendPropertyChanged("start_time");
+					this.Onstart_timeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[end time]", Storage="_end_time", DbType="DateTime")]
+		public System.Nullable<System.DateTime> end_time
+		{
+			get
+			{
+				return this._end_time;
+			}
+			set
+			{
+				if ((this._end_time != value))
+				{
+					this.Onend_timeChanging(value);
+					this.SendPropertyChanging();
+					this._end_time = value;
+					this.SendPropertyChanged("end_time");
+					this.Onend_timeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(50)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_teacher", DbType="NVarChar(50)")]
+		public string teacher
+		{
+			get
+			{
+				return this._teacher;
+			}
+			set
+			{
+				if ((this._teacher != value))
+				{
+					this.OnteacherChanging(value);
+					this.SendPropertyChanging();
+					this._teacher = value;
+					this.SendPropertyChanged("teacher");
+					this.OnteacherChanged();
 				}
 			}
 		}

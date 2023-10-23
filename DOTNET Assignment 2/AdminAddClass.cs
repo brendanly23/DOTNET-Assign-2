@@ -72,51 +72,12 @@ namespace DOTNET_Assignment_2
             }
         }
 
-        private void AdminAddSubject_Load(object sender, EventArgs e)
+        private void AdminAddClass_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'subjectManagementDataSet1.Subject' table. You can move, or remove it, as needed.
-            this.subjectTableAdapter.Fill(this.subjectManagementDataSet1.Subject);
+            // TODO: This line of code loads data into the 'subjectManagementDataSet1.Login1' table. You can move, or remove it, as needed.
+            this.login1TableAdapter.Fill(this.subjectManagementDataSet1.Login1);
             // TODO: This line of code loads data into the 'subjectManagementDataSet.Login' table. You can move, or remove it, as needed.
             this.loginTableAdapter.Fill(this.subjectManagementDataSet.Login);
-
-        }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.loginTableAdapter.FillBy(this.subjectManagementDataSet.Login);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillBy2ToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.loginTableAdapter.FillBy2(this.subjectManagementDataSet.Login);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillBy3ToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.loginTableAdapter.FillBy3(this.subjectManagementDataSet.Login);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
 
         }
 
@@ -124,18 +85,6 @@ namespace DOTNET_Assignment_2
         {
 
         }
-
-        private void fillBy4ToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.loginTableAdapter.FillBy4(this.subjectManagementDataSet.Login);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
     }
+
 }

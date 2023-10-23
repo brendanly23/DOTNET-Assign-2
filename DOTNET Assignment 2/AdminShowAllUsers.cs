@@ -33,5 +33,10 @@ namespace DOTNET_Assignment_2
             this.loginTableAdapter.Fill(this.subjectManagementDataSet.Login);
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

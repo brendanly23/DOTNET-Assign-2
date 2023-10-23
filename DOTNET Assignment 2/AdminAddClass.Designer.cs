@@ -44,13 +44,20 @@
             this.loginBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.subjectManagementDataSet = new DOTNET_Assignment_2.SubjectManagementDataSet();
             this.loginTableAdapter = new DOTNET_Assignment_2.SubjectManagementDataSetTableAdapters.LoginTableAdapter();
+            this.fillBy1ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillBy1ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.loginBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.subjectManagementDataSet1 = new DOTNET_Assignment_2.SubjectManagementDataSet();
-            this.subjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.subjectTableAdapter = new DOTNET_Assignment_2.SubjectManagementDataSetTableAdapters.SubjectTableAdapter();
+            this.login1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.login1TableAdapter = new DOTNET_Assignment_2.SubjectManagementDataSetTableAdapters.Login1TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectManagementDataSet)).BeginInit();
+            this.fillByToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectManagementDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.login1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -94,7 +101,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(327, 359);
+            this.button1.Location = new System.Drawing.Point(332, 352);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 34);
             this.button1.TabIndex = 7;
@@ -172,7 +179,7 @@
             // 
             // comboBox2
             // 
-            this.comboBox2.DataSource = this.loginBindingSource;
+            this.comboBox2.DataSource = this.login1BindingSource;
             this.comboBox2.DisplayMember = "username";
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
@@ -180,6 +187,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(175, 28);
             this.comboBox2.TabIndex = 23;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // loginBindingSource
             // 
@@ -195,25 +203,59 @@
             // 
             this.loginTableAdapter.ClearBeforeFill = true;
             // 
+            // fillBy1ToolStrip
+            // 
+            this.fillBy1ToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillBy1ToolStrip.Name = "fillBy1ToolStrip";
+            this.fillBy1ToolStrip.Size = new System.Drawing.Size(800, 25);
+            this.fillBy1ToolStrip.TabIndex = 26;
+            // 
+            // fillBy1ToolStripButton
+            // 
+            this.fillBy1ToolStripButton.Name = "fillBy1ToolStripButton";
+            this.fillBy1ToolStripButton.Size = new System.Drawing.Size(23, 23);
+            // 
+            // fillByToolStrip
+            // 
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 25);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(800, 25);
+            this.fillByToolStrip.TabIndex = 25;
+            this.fillByToolStrip.Text = "fillByToolStrip";
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(23, 22);
+            // 
+            // loginBindingSource1
+            // 
+            this.loginBindingSource1.DataMember = "Login";
+            this.loginBindingSource1.DataSource = this.subjectManagementDataSet;
+            // 
             // subjectManagementDataSet1
             // 
             this.subjectManagementDataSet1.DataSetName = "SubjectManagementDataSet";
             this.subjectManagementDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // subjectBindingSource
+            // login1BindingSource
             // 
-            this.subjectBindingSource.DataMember = "Subject";
-            this.subjectBindingSource.DataSource = this.subjectManagementDataSet1;
+            this.login1BindingSource.DataMember = "Login1";
+            this.login1BindingSource.DataSource = this.subjectManagementDataSet1;
             // 
-            // subjectTableAdapter
+            // login1TableAdapter
             // 
-            this.subjectTableAdapter.ClearBeforeFill = true;
+            this.login1TableAdapter.ClearBeforeFill = true;
             // 
             // AdminAddClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.fillByToolStrip);
+            this.Controls.Add(this.fillBy1ToolStrip);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dateTimePicker2);
@@ -228,11 +270,14 @@
             this.Controls.Add(this.label1);
             this.Name = "AdminAddClass";
             this.Text = "AdminAddSubject";
-            this.Load += new System.EventHandler(this.AdminAddSubject_Load);
+            this.Load += new System.EventHandler(this.AdminAddClass_Load);
             ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectManagementDataSet)).EndInit();
+            this.fillByToolStrip.ResumeLayout(false);
+            this.fillByToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectManagementDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.login1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,8 +300,13 @@
         private SubjectManagementDataSet subjectManagementDataSet;
         private System.Windows.Forms.BindingSource loginBindingSource;
         private SubjectManagementDataSetTableAdapters.LoginTableAdapter loginTableAdapter;
+        private System.Windows.Forms.ToolStrip fillBy1ToolStrip;
+        private System.Windows.Forms.ToolStripButton fillBy1ToolStripButton;
+        private System.Windows.Forms.ToolStrip fillByToolStrip;
+        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
+        private System.Windows.Forms.BindingSource loginBindingSource1;
         private SubjectManagementDataSet subjectManagementDataSet1;
-        private System.Windows.Forms.BindingSource subjectBindingSource;
-        private SubjectManagementDataSetTableAdapters.SubjectTableAdapter subjectTableAdapter;
+        private System.Windows.Forms.BindingSource login1BindingSource;
+        private SubjectManagementDataSetTableAdapters.Login1TableAdapter login1TableAdapter;
     }
 }

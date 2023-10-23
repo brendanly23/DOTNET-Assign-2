@@ -32,8 +32,8 @@ namespace DOTNET_Assignment_2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AdminAddClass subject = new AdminAddClass();
-            subject.Show();
+            AdminAddClass menu = new AdminAddClass();
+            menu.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.subjectManagementDataSet = new DOTNET_Assignment_2.SubjectManagementDataSet();
-            this.loginBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.loginTableAdapter = new DOTNET_Assignment_2.SubjectManagementDataSetTableAdapters.LoginTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loginBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.subjectManagementDataSet = new DOTNET_Assignment_2.SubjectManagementDataSet();
+            this.loginTableAdapter = new DOTNET_Assignment_2.SubjectManagementDataSetTableAdapters.LoginTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subjectManagementDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectManagementDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -56,25 +56,11 @@
             this.passwordDataGridViewTextBoxColumn,
             this.roleDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.loginBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(188, 130);
+            this.dataGridView1.Location = new System.Drawing.Point(179, 129);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(461, 212);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // subjectManagementDataSet
-            // 
-            this.subjectManagementDataSet.DataSetName = "SubjectManagementDataSet";
-            this.subjectManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // loginBindingSource
-            // 
-            this.loginBindingSource.DataMember = "Login";
-            this.loginBindingSource.DataSource = this.subjectManagementDataSet;
-            // 
-            // loginTableAdapter
-            // 
-            this.loginTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -104,6 +90,20 @@
             this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
             this.roleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // loginBindingSource
+            // 
+            this.loginBindingSource.DataMember = "Login";
+            this.loginBindingSource.DataSource = this.subjectManagementDataSet;
+            // 
+            // subjectManagementDataSet
+            // 
+            this.subjectManagementDataSet.DataSetName = "SubjectManagementDataSet";
+            this.subjectManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // loginTableAdapter
+            // 
+            this.loginTableAdapter.ClearBeforeFill = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -123,6 +123,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Exit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AdminShowAllUsers
             // 
@@ -136,8 +137,8 @@
             this.Text = "AdminShowAllUsers";
             this.Load += new System.EventHandler(this.AdminShowAllUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subjectManagementDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectManagementDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
